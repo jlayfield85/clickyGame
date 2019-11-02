@@ -13,6 +13,8 @@ class App extends Component {
     highscore: 0
   };
 
+//This is when the came is complete.
+
   completeGame = () => {
     if (this.state.score > this.state.highscore) {
       this.setState({highscore: this.state.score}, function() {
@@ -27,6 +29,8 @@ class App extends Component {
     return true;
   }
 
+// This is the current score counter and the random card sorting generator.
+
   clickCount = id => {
     this.state.cards.find((x, y) => {
       if (x.id === id) {
@@ -35,7 +39,7 @@ class App extends Component {
           this.setState({score : this.state.score + 1}, function(){
             console.log(this.state.score);
           });
-          this.state.cards.sort(() => Math.random() - 3)
+          this.state.cards.sort(() => Math.random() - 0.5)
           return true; 
         } else {
           this.completeGame();
@@ -47,7 +51,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header score={this.state.score} highscore={this.state.highscore}>The Office Clicky Game</Header>
+        <Header score={this.state.score} highscore={this.state.highscore}>The Office Clicky Memory Game! Select an Office Character! </Header>
         {this.state.cards.map(card => (
           <Card
             clickCount={this.clickCount}
