@@ -22,7 +22,7 @@ class App extends Component {
     this.state.cards.forEach(card => {
       card.count = 0;
     });
-    alert(`The Office Clicky Game is now Complete! \nscore: ${this.state.score}`);
+    alert(`Game is over, idiot! -Dwight Schrute \nscore: ${this.state.score}`);
     this.setState({score: 0});
     return true;
   }
