@@ -22,20 +22,20 @@ class App extends Component {
     this.state.cards.forEach(card => {
       card.count = 0;
     });
-    alert(`Game is over, idiot! -Dwight Schrute \nscore: ${this.state.score}`);
+    alert(`The Office Clicky Game is over, you idiot! -Dwight Schrute \nscore: ${this.state.score}`);
     this.setState({score: 0});
     return true;
   }
 
   clickCount = id => {
-    this.state.cards.find((o, i) => {
-      if (o.id === id) {
-        if(cards[i].count === 0){
-          cards[i].count = cards[i].count + 1;
+    this.state.cards.find((x, y) => {
+      if (x.id === id) {
+        if(cards[y].count === 0){
+          cards[y].count = cards[y].count + 1;
           this.setState({score : this.state.score + 1}, function(){
             console.log(this.state.score);
           });
-          this.state.cards.sort(() => Math.random() - 0.5)
+          this.state.cards.sort(() => Math.random() - 3)
           return true; 
         } else {
           this.completeGame();
@@ -43,7 +43,7 @@ class App extends Component {
       }
     });
   }
-  // Map over this.state.cards and render a cardCard component for each card object
+
   render() {
     return (
       <Wrapper>
