@@ -6,14 +6,14 @@ import cards from "./cards.json";
 import "./App.css";
 
 class App extends Component {
-  // Setting this.state.cards to the cards json array
+  // This is putting the cards in a JSON array.
   state = {
     cards,
     score: 0,
     highscore: 0
   };
 
-  gameOver = () => {
+  completeGame = () => {
     if (this.state.score > this.state.highscore) {
       this.setState({highscore: this.state.score}, function() {
         console.log(this.state.highscore);
@@ -22,7 +22,7 @@ class App extends Component {
     this.state.cards.forEach(card => {
       card.count = 0;
     });
-    alert(`Game Over :( \nscore: ${this.state.score}`);
+    alert(`The Office Clicky Game is now Complete! \nscore: ${this.state.score}`);
     this.setState({score: 0});
     return true;
   }
@@ -38,7 +38,7 @@ class App extends Component {
           this.state.cards.sort(() => Math.random() - 0.5)
           return true; 
         } else {
-          this.gameOver();
+          this.completeGame();
         }
       }
     });

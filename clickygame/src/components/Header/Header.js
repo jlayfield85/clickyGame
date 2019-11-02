@@ -1,11 +1,11 @@
 import React from "react";
-import "./Header.css";
+import "./header.css";
 
 const Header = props => (
   <div className="header">
     <div className="title">{props.children}</div>
     <div className="scores">
-      Current Score: {props.score} Highscore: {props.highscore}
+      Your Current Score: {props.score} Your Highest Score: {props.highscore}
     </div>
   </div>
 );

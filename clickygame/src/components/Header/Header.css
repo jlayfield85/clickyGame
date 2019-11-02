@@ -1,14 +1,14 @@
 .header {
-    width: 100%;
-    font-size: 2rem;
-    color: #2A77AE;
-    margin-bottom: 10px;
+    width: 80%;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
   }
   
   .title {
-    float: left;
+    float: right;
   }
   
   .scores {
-    float: right;
+    float: left;
   }
