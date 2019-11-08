@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Card from "./components/Card";
-import Wrapper from "./components/Wrapper";
+import Background from "./components/Background";
 import Header from "./components/Header";
 import cards from "./cards.json";
 import "./App.css";
@@ -50,7 +50,7 @@ class App extends Component {
 
   render() {
     return (
-      <Wrapper>
+      <Background>
         <Header score={this.state.score} highscore={this.state.highscore}>The Office Clicky Memory Game! Select an Office Character! </Header>
         {this.state.cards.map(card => (
           <Card
@@ -60,7 +60,7 @@ class App extends Component {
             image={card.image}
           />
         ))}
-      </Wrapper>
+      </Background>
     );
   }
 }
